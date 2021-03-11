@@ -1,0 +1,49 @@
+#!/bin/bash
+set -e
+
+print_msg() {
+    echo -e "dummy-sailjail: $@"
+}
+
+print_msg "sailjail $@"
+
+booster_type=silica-qt5
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+    "-p")
+        case "$2" in
+        "sailfish-browser.desktop" | "jolla-email.desktop")
+            booster_type="browser"
+            args="$args -G"
+            ;;
+        "jolla-camera*")
+            booster_type="silica-media,silica-qt5"
+            ;;
+        "jolla-calendar.desktop" | "voicecall-ui.desktop")
+            args="$args -n -d 5 -s"
+            ;;
+        # For some reason -s prevents starting those apps
+        "jolla-contacts.desktop" | "sailfish-weather.desktop")
+            args="$args -n -d 5"
+            ;;
+        esac
+
+        args="$args --desktop-file=$2"
+        shift 2
+        ;;
+    "-a")
+        # just drop
+        shift 2
+        ;;
+     *)
+        args="$args $1"
+        shift
+        ;;
+    esac
+done
+
+
+print_msg "executing:"
+set -x
+/usr/bin/invoker --type=$booster_type $args
