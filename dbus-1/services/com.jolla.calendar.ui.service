@@ -1,0 +1,4 @@
+[D-BUS Service]
+Interface=/com/jolla/calendar/ui
+Name=com.jolla.calendar.ui
+Exec=/usr/bin/invoker --type=silica-qt5 --desktop-file=jolla-calendar.desktop -n -d 5 -s /usr/bin/jolla-calendar -prestart

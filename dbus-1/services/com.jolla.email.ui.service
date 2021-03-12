@@ -1,0 +1,4 @@
+[D-BUS Service]
+Interface=/com/jolla/email/ui
+Name=com.jolla.email.ui
+Exec=/usr/bin/invoker --type=browser -G --desktop-file=jolla-email.desktop -s /usr/bin/jolla-email -prestart

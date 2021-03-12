@@ -23,7 +23,7 @@ while [ $# -gt 0 ]; do
         "jolla-calendar.desktop" | "voicecall-ui.desktop")
             args="$args -n -d 5 -s"
             ;;
-        # For some reason -s prevents starting those apps
+        # For some reason -s prevents starting these apps
         "jolla-contacts.desktop" | "sailfish-weather.desktop")
             args="$args -n -d 5"
             ;;

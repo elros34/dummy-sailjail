@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.jolla.clock
+Exec=/usr/bin/invoker --type=silica-qt5 --desktop-file=jolla-clock.desktop -s -n -d 5 /usr/bin/jolla-clock -prestart
