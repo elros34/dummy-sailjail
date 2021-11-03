@@ -1,14 +1,14 @@
 Name:       dummy-sailjail
 
 Summary:    Dummy sailjail wrapper
-Version:    1.0.23.1
-Release:    3
+Version:    1.0.36
+Release:    2
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
-Provides:   sailjail = 1.0.23.1
-Conflicts:  sailjail = 1.0.23.1
+Provides:   sailjail = 1.0.36
+Conflicts:  sailjail = 1.0.36
 #Obsoletes:  sailjail <= 1.0.23.1
 Requires:   mapplauncherd-booster-browser
 
