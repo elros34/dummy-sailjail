@@ -1,4 +1,4 @@
 # QtCreator local machine specific files for imported projects
 *pro.user*
 RPMS/
-documentation.list
+*.list
