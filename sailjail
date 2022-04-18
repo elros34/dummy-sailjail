@@ -5,7 +5,7 @@ print_msg() {
     echo -e "dummy-sailjail: $@"
 }
 
-print_msg "sailjail $@"
+print_msg "$@"
 
 booster_type=silica-qt5
 
