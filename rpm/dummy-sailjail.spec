@@ -31,11 +31,13 @@ rm -rf %{buildroot}
 install -D -m 0755 sailjail %{buildroot}/usr/bin/sailjail
 install -D -m 0755 disable_sailjail_in_desktop.sh %{buildroot}/usr/bin/disable_sailjail_in_desktop.sh
 mkdir -p %{buildroot}/etc
-cp -r systemd/ %{buildroot}/etc/
+cp -r data/systemd/ %{buildroot}/etc/
 mkdir -p %{buildroot}/usr/share
-cp -r mapplauncherd/ %{buildroot}/usr/share/
+cp -r data/mapplauncherd/ %{buildroot}/usr/share/
 mkdir -p %{buildroot}/usr/local/share/
-cp -r dbus-1 %{buildroot}/usr/local/share/
+cp -r data/dbus-1 %{buildroot}/usr/local/share/
+mkdir -p %{buildroot}/etc/sailjail/config/
+cp data/51-disable-default-profile.conf %{buildroot}/etc/sailjail/config/
 # sandboxed boosters
 ln -s /dev/null %{buildroot}/etc/systemd/user/booster-generic@.service
 ln -s /dev/null %{buildroot}/etc/systemd/user/booster-qt5@.service
@@ -46,6 +48,7 @@ ln -s /dev/null %{buildroot}/etc/systemd/user/booster-silica-media@.service
 %files
 %defattr(-,root,root,-)
 %{_bindir}/*
+/etc/sailjail/config/*
 /etc/systemd/user/
 /usr/share/mapplauncherd/
 /usr/local/share/dbus-1/
