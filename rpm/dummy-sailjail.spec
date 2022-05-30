@@ -36,6 +36,7 @@ mkdir -p %{buildroot}/usr/share
 cp -r mapplauncherd/ %{buildroot}/usr/share/
 mkdir -p %{buildroot}/usr/local/share/
 cp -r dbus-1 %{buildroot}/usr/local/share/
+# sandboxed boosters
 ln -s /dev/null %{buildroot}/etc/systemd/user/booster-generic@.service
 ln -s /dev/null %{buildroot}/etc/systemd/user/booster-qt5@.service
 ln -s /dev/null %{buildroot}/etc/systemd/user/booster-browser@.service
