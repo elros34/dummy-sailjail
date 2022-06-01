@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.jolla.camera
+Exec=/usr/bin/invoker -s -n -d 5 --type=silica-media,silica-qt5 -- /usr/bin/jolla-camera

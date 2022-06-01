@@ -22,6 +22,12 @@ Dummy sailjail wrapper
 %transfiletriggerin -- /usr/share/applications/
 /usr/bin/disable_sailjail_in_desktop.sh $(cat)
 
+%triggerin -- jolla-camera
+sed -i 's|silica-qt5 -A |silica-qt5 |' /usr/share/applications/jolla-camera*.desktop
+
+%triggerin -- jolla-camera-lockscreen
+sed -i 's|silica-qt5 -A |silica-qt5 |' /usr/share/applications/jolla-camera-lockscreen.desktop
+
 %post
 /usr/bin/disable_sailjail_in_desktop.sh $(ls /usr/share/applications/*.desktop)
 
