@@ -27,6 +27,10 @@ while [ $# -gt 0 ]; do
         "jolla-contacts.desktop" | "sailfish-weather.desktop")
             args="$args -n -d 5"
             ;;
+        # With silica booster format/size is not shown properly
+        "sailfish-office.desktop")
+            booster_type="qt5"
+            ;;
         esac
 
         args="$args --desktop-file=$2"
